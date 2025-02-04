@@ -26,5 +26,6 @@ def main():
         filename = f"epic_nasa_image_{images_num}.png"
         download_img(link, filename, api_key)
 
+
 if __name__=="__main__":
     main()

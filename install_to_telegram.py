@@ -1,14 +1,27 @@
 import telegram
 import os
-import urllib3 
 from dotenv import load_dotenv
+import time
+import random
 
 
-load_dotenv()
+def main():
+    load_dotenv()
+    token = os.environ['TOKEN']
+    time = os.environ['TIME']
 
-token = os.environ['TOKEN']
+    chat_id = os.environ["CHAT_ID"]
 
-chat_id = "@for_test_t"
+    bot = telegram.Bot(token=token)
 
-bot = telegram.Bot(token=token)
-bot.send_photo(chat_id=chat_id, photo=open('imgs/nasa_image0.jpg', 'rb'))
+    while True:
+        for root, dirs, files in os.walk('imgs'):
+            random.shuffle(files)
+            for img_name in files:
+                bot.send_photo(chat_id=chat_id, photo=open(f'imgs/{img_name}', 'rb'))
+                time.sleep(5)
+        time.sleep(time)   
+
+
+if __name__=="__main__":
+    main()

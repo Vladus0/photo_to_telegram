@@ -32,11 +32,27 @@ CHAT_ID=id вашего бота
 
 Чтобы скачать фото spacex, вам нужно написать в консоль spacex.py
 
+```
+python spacex.py
+```
+
 Чтобы скачать фото nasa, вам нужно написать в консоль nasa.py
+
+```
+python nasa.py
+```
 
 Чтобы скачать фото nasa_epic, вам нужно написать в консоль nasa_epic.py
 
+```
+python nasa_epic.py
+```
+
 Чтобы запустить программу для вывода фотографий в телеграм вам нужно написать в консоль install_to_telegram.py
+
+```
+python install_to_telegram.py
+```
 
 ### Цель проекта
 

@@ -18,7 +18,8 @@ def main():
         for root, dirs, files in os.walk('imgs'):
             random.shuffle(files)
             for img_name in files:
-                bot.send_photo(chat_id=chat_id, photo=open(f'imgs/{img_name}', 'rb'))
+                with open(f'imgs/{img_name}', 'rb') as img:
+                    bot.send_photo(chat_id=chat_id, photo=img)
                 time.sleep(5)
         time.sleep(time)   
 

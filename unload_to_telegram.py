@@ -8,7 +8,7 @@ import random
 def main():
     load_dotenv()
     token = os.environ['TELEGRAM_TOKEN']
-    time = os.environ['TIME']
+    time = os.environ['DELAY_TIME']
 
     chat_id = os.environ["TG_CHAT_ID"]
 

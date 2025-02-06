@@ -12,9 +12,10 @@ def get_extension_url(nasa_image):
 def main():
     load_dotenv()    
     api_key = os.environ['NASA_API_KEY']
+    number_of_photos = 30
     payload = {
         "api_key": api_key,
-        "count": 30
+        "count": number_of_photos
     }
     url = "https://api.nasa.gov/planetary/apod" 
     response = requests.get(url, params=payload)

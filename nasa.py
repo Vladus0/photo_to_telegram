@@ -11,7 +11,7 @@ def get_extension_url(nasa_image):
 
 def main():
     load_dotenv()    
-    api_key = os.environ['API_KEY']
+    api_key = os.environ['NASA_API_KEY']
     payload = {
         "api_key": api_key,
         "count": 30

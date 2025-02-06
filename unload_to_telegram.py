@@ -7,10 +7,10 @@ import random
 
 def main():
     load_dotenv()
-    token = os.environ['TOKEN']
+    token = os.environ['TELEGRAM_TOKEN']
     time = os.environ['TIME']
 
-    chat_id = os.environ["CHAT_ID"]
+    chat_id = os.environ["TG_CHAT_ID"]
 
     bot = telegram.Bot(token=token)
 

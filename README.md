@@ -1,80 +1,73 @@
-# Код для скачивания фотографий про космос от spacex и nasa
+# 🌌 Space Photo to Telegram Bot
 
-Код скачивает фотографии с сайтов spacex и nasa и публикует их в телеграм-каналы с помощью бота.
+Асинхронный Telegram-бот на Python, который автоматически собирает уникальный медиаконтент космической тематики из открытых API и публикует его в Telegram.
+A Python-based Telegram bot that automatically fetches, filters, and uploads space imagery from **NASA API** and **SpaceX API** directly to a Telegram channel. Backed by an **SQLite** database to prevent duplicate posts.
 
-## Основные возможности
 
-1. Скачивание фотографий с сайтов SpaceX и Nasa
+## 🚀 Стек технологий
+* **Язык:** Python 3.x
+* **Библиотека бота:** `python-telegram-bot` (Асинхронная реализация)
+* **Работа с сетью:** `requests` / `urllib`
+* **База данных:** `SQLite` (для логирования и контроля отправленных медиа)
 
-2. Публикация скаченных фотографий черезе теллеграм-бота в телеграм-каналы
+## 🚀 Features
+* **Multi-source Parsing:** Downloads dynamic image content via official and community space APIs.
+* **Smart Duplication Filter:** Uses SQLite database to track already sent images.
+* **Asynchronous Design:** Powered by `python-telegram-bot` for smooth and stable performance.
+* **Clean Logging:** Integrated production-ready logging system for easy debugging.
 
-### Как установить
 
-Python3 должен быть уже установлен. 
+## 🛠️ Функционал и модули
+* **NASA Модуль:** Интеграция с официальным NASA API для получения снимков Земли и космоса.
+* **SpaceX Модуль:** Парсинг данных о запусках ракет и получение официальных медиа-материалов.
 
-1. Откройте командную строку и перейдите в папку с проектом:
+## 🛠️ Tech Stack
+* **Language:** Python 3.x
+* **Framework:** `python-telegram-bot`
+* **API Integration:** `requests`
+
+
+## ⚙️ Как запустить проект локально
+
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com
 ```
-cd photo_to_telegram
-```
 
-2. Создайте и активируйте виртуальное окружение:
-2. 1. На Windosw:
-```
-python -m venv venv
-venv\Scripts\activate
-```
-
-2. 2. На macOS / Linux:
-```
-python3 -m venv venv
-source venv/bin/activate
-```
-
-Затем используйте `pip` (или `pip3`, есть конфликт с Python2) для установки зависимостей:
-```
+2. Установите необходимые зависимости:
+```bash
 pip install -r requirements.txt
 ```
 
-Далее в .env файле найдете 3 переменные: API_KEY, TOKEN, TIME. 
+3. Создайте файл конфигурации или укажите ваши токены (`BOT_TOKEN` и `NASA_API_KEY`) в настройках проекта.
 
-NASA_API_KEY - это ваш айпи от nasa, он нужен чтобы скачивать фото от nasa. Получить его можно, зарегистрировавшись на сайте [nasa](https://api.nasa.gov/).
-
-TELEGRAM_TOKEN - это токен вашего бота в телеграме, который будет скачивать и присылать фото. Выглядит токен примерно так: `958423683:AAEAtJ5Lde5YYfkjergber`.
-
-DELAY_TIME - это время, через которое бот начнет снова присылать вам фотографии. Время устанавливается в секундах.
-
-TG_CHAT_ID - это id вашего бота в телеграме.
-
-```
-NASA_API_KEY=ваш nasa айпи
-TELEGRAM_TOKEN=токен бота в телеграме
-DELAY_TIME=время
-TG_CHAT_ID=id вашего бота
+4. Запустите бота:
+```bash
+python main.py
 ```
 
 
-### Запуск программы
+## 📦 Installation & Setup
 
-Чтобы скачать фото spacex, вам нужно написать в консоль spacex.py.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com
+   cd photo_to_telegram
+   ```
 
-```
-python spacex.py
-```
+2. **Install dependencies:**
+   ```bash
+   pip install python-telegram-bot requests
+   ```
 
-Чтобы скачать фото nasa, вам нужно написать в консоль nasa.py.
+3. **Configure Environment:**
+   Replace the placeholders in the script with your actual `TELEGRAM_TOKEN`, `CHANNEL_ID`, and `NASA_API_KEY`.
 
-```
-python nasa.py
-```
+4. **Run the Bot:**
+   ```bash
+   python main.py
+   ```
 
-Чтобы скачать фото nasa_epic, вам нужно написать в консоль nasa_epic.py.
-
-```
-python nasa_epic.py
-```
-
-Чтобы запустить программу для вывода фотографий в телеграм вам нужно написать в консоль install_to_telegram.py.
-
-```
-python install_to_telegram.py
-```
+## 📬 Контакты для связи
+Если вам нужен похожий бот, парсер или скрипт для автоматизации рутины — пишите мне в Telegram: @Vladus_Dev0
+Developed by an independent Python contractor specializing in automation, parsers, and Telegram ecosystem solutions. Telegram: @Vladus_Dev0

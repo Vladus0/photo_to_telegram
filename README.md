@@ -8,7 +8,6 @@ A Python-based Telegram bot that automatically fetches, filters, and uploads spa
 * **Язык:** Python 3.x
 * **Библиотека бота:** `python-telegram-bot` (Асинхронная реализация)
 * **Работа с сетью:** `requests` / `urllib`
-* **База данных:** `SQLite` (для логирования и контроля отправленных медиа)
 
 ## 🚀 Features
 * **Multi-source Parsing:** Downloads dynamic image content via official and community space APIs.
@@ -31,7 +30,7 @@ A Python-based Telegram bot that automatically fetches, filters, and uploads spa
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com
+git clone https://github.com/Vladus0/photo_to_telegram
 ```
 
 2. Установите необходимые зависимости:
@@ -39,11 +38,16 @@ git clone https://github.com
 pip install -r requirements.txt
 ```
 
-3. Создайте файл конфигурации или укажите ваши токены (`BOT_TOKEN` и `NASA_API_KEY`) в настройках проекта.
+3. Создайте файл конфигурации `.env` и укажите ваши токены (`TELEGRAM_TOKEN` токен бота, `NASA_API_KEY` API-ключ, который создается на сайте nasa, `TG_CHAT_ID` id чата в который будут выкладываться картинки и `PROXY_URL` если вы используете vpn/proxy для работы tg).
 
-4. Запустите бота:
+4. Скачать картинки с сайта nasa:
 ```bash
-python main.py
+python nasa.py
+```
+
+5. Запуск бота:
+```bash
+python unload_to_telegram.py
 ```
 
 
@@ -51,7 +55,7 @@ python main.py
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com
+   git clone https://github.com/Vladus0/photo_to_telegram
    cd photo_to_telegram
    ```
 
@@ -61,12 +65,18 @@ python main.py
    ```
 
 3. **Configure Environment:**
-   Replace the placeholders in the script with your actual `TELEGRAM_TOKEN`, `CHANNEL_ID`, and `NASA_API_KEY`.
+   Replace the placeholders in the script with your actual `TELEGRAM_TOKEN`, `NASA_API_KEY`, `PROXY_URL` and `TG_CHAT_ID`.
 
-4. **Run the Bot:**
+4. **Download images from nasa:**
    ```bash
-   python main.py
+   python nasa.py
    ```
+
+5. **Unload images to TG:**
+```bash
+python unload_to_telegram.py
+```
+
 
 ## 📬 Контакты для связи
 Если вам нужен похожий бот, парсер или скрипт для автоматизации рутины — пишите мне в Telegram: @Vladus_Dev0
